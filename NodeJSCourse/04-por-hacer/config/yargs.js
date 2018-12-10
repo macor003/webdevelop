@@ -3,28 +3,23 @@
  * 
  */
 
-const optsCrear = {
-    descripcion: {
-        demand: true,
-        alias: 'd',
-        desc: 'Descripción de una tarea'
-    }
+
+const descripcion = {
+    demand: true,
+    alias: 'd',
+    desc: 'Descripción de una tarea'
 }
 
-const optsActualizar = {
-    descripcion: {
-        demand: true,
-        alias: 'd'
-    },
-    completado: {
-        alias: 'c',
-        default: true
-    }
+
+const completado = {
+    alias: 'c',
+    default: true
 }
 
 const argv = require('yargs')
-    .command('crear', 'Crea una tarea', optsCrear)
-    .command('actualizar', 'Actualiza el estado de una tarea', optsActualizar)
+    .command('crear', 'Crea una tarea', { descripcion })
+    .command('actualizar', 'Actualiza el estado de una tarea', { descripcion, completado })
+    .command('borrar', 'Borra una tarea', { descripcion })
     .argv;
 
 
