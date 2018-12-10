@@ -11,7 +11,6 @@ const optsCrear = {
     }
 }
 
-
 const optsActualizar = {
     descripcion: {
         demand: true,
