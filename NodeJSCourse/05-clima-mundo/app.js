@@ -13,12 +13,12 @@
 // AIzaSyD4YFaT5DvwhhhqMpDP2pBInoG8BTzA9JY
 // AIzaSyAbPC1F9pWeD70Ny8PHcjguPffSLhT-YF8
 
-const argv = require('yargs').options({
-    direccion: {
-        alias: 'd',
-        desc: 'Dirección de la ciudad para obtener el clima',
-        demand: true
-    }
-}).argv;
 
-console.log(argv.direccion);
+const argv = require('./conf/yargs').argv;
+const lugar = require('./lugar/lugar');
+
+lugar.getInfo(argv.direccion)
+    .then(response => {
+        console.log(response);
+    })
+    .catch(e => console.log(e));
