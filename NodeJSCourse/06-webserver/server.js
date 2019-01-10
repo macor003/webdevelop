@@ -1,16 +1,20 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+
+var hbs = require('hbs');
+
+app.use(express.static(__dirname + '/public'));
+
+// Express HBS engine
+hbs.registerPartials(__dirname + '/views/parciales');
+app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
-    //res.send('Hello World');
 
-    let salida = {
+    res.render('home', {
         nombre: 'Mario',
-        edad: 26,
-        url: req.url
-    }
-
-    res.send(salida);
+        anio: new Date().getFullYear()
+    });
 });
 
 app.listen(3000, () => {
