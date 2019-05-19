@@ -1,0 +1,6 @@
+
+user:mortega
+pass:i2ZBsQp6vp0rDiN8
+
+URL para conectar a Mongo Atlas
+mongodb+srv://mortega:i2ZBsQp6vp0rDiN8@cluster0-ok0ro.mongodb.net/cafe
